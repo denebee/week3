@@ -12,6 +12,9 @@ document.getElementById("btnSave").onclick=function(){
     td2=document.createElement("td");
     td3=document.createElement("td");
 
+    var div = document.createElement('div');
+    div.innerHTML = document.getElementById('pre_set').innerHTML;
+
     td1.innerText=lastName;
     td2.innerText=firstName;
     td3.innerText=phoneNumber;
@@ -20,6 +23,7 @@ document.getElementById("btnSave").onclick=function(){
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
+    tr.appendChild(div);
    
    /* tr.innerHTML="<td>"+lastName+"</td>";
     tr.innerHTML="<td>"+firstName+"</td>";
@@ -29,4 +33,7 @@ document.getElementById("btnSave").onclick=function(){
 
 
 }
-
+function deleteRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("mytable").deleteRow(i);
+}
